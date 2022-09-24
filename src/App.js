@@ -18,7 +18,6 @@ const App = () => {
     const [items, setItems] = useState(getLocalItems());
     const [toggleSubmit, setToggleSubmit] = useState(true);
     const [isEditItem, setIsEditItem] = useState(null);
-    const [query, setQuery] = useState( );
 
     const inputHandler = (event) => {
         // console.log(event.target.value);
@@ -73,9 +72,6 @@ const App = () => {
         localStorage.setItem('lists', JSON.stringify(items));
     }, [items]);
 
-
-    
-
   return (
     <>
         <div className='main_div'>
@@ -85,7 +81,6 @@ const App = () => {
                     toggleSubmit ? <button className='button' onClick={addItem}> + </button> : 
                           <i className='fa fa-edit button-ji' onClick={addItem} />
                 }
-                  <input className='search-bar' type='text' placeholder='search' onChange={(e)=>{}}/>
                 <ol>
                     {
                         items.map((elem)=>{
